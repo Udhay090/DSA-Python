@@ -1,0 +1,17 @@
+Method 1 :-sorting  
+=====================================================================
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        return nums[-k]
+=====================================================================    
+Method 2:-heap
+=====================================================================
+
+import heapq
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        heapq.heapify(nums)
+        while len(nums)>k:
+            heapq.heappop(nums)
+        return nums[0]
